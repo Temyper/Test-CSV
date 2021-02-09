@@ -19,10 +19,16 @@ main {
   align-items: center; /* 縦を中央揃えにする */
 }
 
-#output-csv__english {
+#output-csv__english-without-bom {
   margin-top: 100px;
   font-size: 20px;
   background-color: rgb(123, 123, 238);
+}
+
+#output-csv__english-with-bom {
+  margin-top: 100px;
+  font-size: 20px;
+  background-color: rgb(201, 106, 180);
 }
 
 #output-csv__japanese {
