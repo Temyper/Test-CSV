@@ -1,7 +1,12 @@
 "use strict";
 
 $("#output-csv").click(function (e) {
-  let content = new Blob(["aiueo"], { type: "text" });
+  let originString =
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, voluptate non. Rerum labore tenetur itaque eveniet iure. Perferendis odio, quos deleniti eius vero ducimus architecto suscipit fugit officiis sed culpa.";
+
+  let text = originString.replace(/ /g, ",");
+
+  let content = new Blob([text], { type: "text" });
 
   let newDownloader = document.createElement("a");
   document.body.appendChild(newDownloader);
