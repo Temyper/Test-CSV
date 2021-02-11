@@ -19,7 +19,7 @@ main {
   align-items: center; /* 縦を中央揃えにする */
 }
 
-#output-csv__english-without-bom {
+#output-csv__english-and-japanese-with-bom {
   margin-top: 100px;
   font-size: 20px;
   background-color: rgb(123, 123, 238);
@@ -35,4 +35,17 @@ main {
   margin-top: 100px;
   font-size: 20px;
   background-color: rgb(216, 172, 89);
+}
+
+#input-csv {
+  margin-left: 10px;
+  width: 300px;
+  /* 幅に合わせて全折り返し */
+  word-break: break-all;
+}
+
+#input-csv__text-file-all {
+  margin-top: 100px;
+  font-size: 20px;
+  background-color: rgb(216, 89, 195);
 }
