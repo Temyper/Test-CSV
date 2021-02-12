@@ -71,3 +71,29 @@ $("#input-csv__text-file-all").click(function (e) {
   $("#input-csv__text-file-all").load("../resource/test.csv");
   e.preventDefault();
 });
+
+$("#input-csv__text-file-editted").click(function (e) {
+  $.get("../resource/test-setting.csv").done(function EdittedText(data) {
+    let rows = data.split("\n");
+    let delimiter = ",";
+    let columnCount = 2;
+    let resultText = "";
+    $.each(rows, function (index, rowText) {
+      let cellTexts = rowText.split(delimiter);
+      if (cellTexts.length != columnCount) {
+        let log = `異常な設定ファイルです：${index}行目：${rowText}`;
+        alert(log);
+        console.log(log);
+        // 20210212jqueryではこれがcontinueに相当する;
+        return true;
+      }
+
+      $.each(cellTexts, function (i, cellText) {
+        resultText += cellText;
+      });
+    });
+    $("#input-csv__text-file-editted").text(resultText);
+  });
+
+  e.preventDefault();
+});
