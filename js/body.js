@@ -73,11 +73,13 @@ $("#input-csv__text-file-all").click(function (e) {
 });
 
 $("#input-csv__text-file-editted").click(function (e) {
-  $.get("../resource/test-setting.csv").done(function EdittedText(data) {
-    let rows = data.split("\n");
-    let delimiter = ",";
-    let columnCount = 2;
-    let resultText = "";
+  $.get("../resource/test-setting.csv").done(function SetCSSFromCSV(data) {
+    const rows = data.split("\n");
+    const delimiter = ",";
+    const columnCount = 2;
+    const targetElement = $("#target");
+    const indexOfNameAboutCSS = 0;
+    const indexOfValueAboutCSS = 1;
     $.each(rows, function (index, rowText) {
       let cellTexts = rowText.split(delimiter);
       if (cellTexts.length != columnCount) {
@@ -87,12 +89,11 @@ $("#input-csv__text-file-editted").click(function (e) {
         // 20210212jqueryではこれがcontinueに相当する;
         return true;
       }
-
-      $.each(cellTexts, function (i, cellText) {
-        resultText += cellText;
-      });
+      targetElement.css(
+        cellTexts[indexOfNameAboutCSS],
+        cellTexts[indexOfValueAboutCSS]
+      );
     });
-    $("#input-csv__text-file-editted").text(resultText);
   });
 
   e.preventDefault();
