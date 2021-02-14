@@ -13,7 +13,7 @@ body {
   background-color: rgb(175, 163, 139);
 }
 
-main {
+#buttons {
   display: flex;
   justify-content: center; /* 横を中央揃えにする */
   align-items: center; /* 縦を中央揃えにする */
@@ -54,4 +54,21 @@ main {
   margin-top: 100px;
   font-size: 20px;
   background-color: rgba(231, 138, 76, 0.363);
+}
+
+#input-csv__text-file-editted-by-json {
+  margin-top: 100px;
+  font-size: 20px;
+  background-color: rgba(103, 81, 199, 0.363);
+}
+
+#target-place {
+  display: flex;
+  justify-content: center; /* 横を中央揃えにする */
+  align-items: center; /* 縦を中央揃えにする */
+}
+
+#target {
+  margin-top: 60px;
+  background-color: green;
 }
